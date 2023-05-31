@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class LAB3_P2 {
 	public static void main(String[] args) {
-		// TODO: write your code here
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter the number of values: ");
 		
@@ -27,7 +26,6 @@ public class LAB3_P2 {
 	}
 
 	public static boolean isConsecutiveFour(int[] values) {
-		// TODO: write your code here
 		int first = values[0];
 		int i = 1;
 		int count = 1;
@@ -45,12 +43,6 @@ public class LAB3_P2 {
 			}
 			i += 1;
 		}
-
-		if (count >= 4) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return false;
 	}
 }

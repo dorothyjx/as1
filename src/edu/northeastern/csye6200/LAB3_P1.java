@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class LAB3_P1 {
 	public static void main(String[] args) {
-		// TODO: write your code here
 		Scanner input = new Scanner(System.in);
 		
 		System.out.print("Enter a credit card number as a long integer: ");
@@ -20,7 +19,6 @@ public class LAB3_P1 {
 
 	/** Return true if the card number is valid */
 	public static boolean isValid(long number) {
-		// TODO: write your code here
 		int oddSum = sumOfOddPlace(number);
 		int evenSum = sumOfDoubleEvenPlace(number);
 		
@@ -34,9 +32,8 @@ public class LAB3_P1 {
 
 	/** Get the result from Step 2 */
 	public static int sumOfDoubleEvenPlace(long number) {
-		// TODO: write your code here
 		int len = getSize(number);
-		String n = number + "";
+		String n = Long.toString(number);
 		
 		int sum = 0;
 		
@@ -54,21 +51,15 @@ public class LAB3_P1 {
 	 * the two digits
 	 */
 	public static int getDigit(int number) {
-		// TODO: write your code here
 		int s = 0;
-		if(number / 10 == 1) {
-			s = number / 10 + number % 10;
-		}
-		else {
-			s = number;
-		}
+		s = number / 10 + number % 10;
+
 		return s;
 	}
 
 	/** Return sum of odd place digits in number */
 	public static int sumOfOddPlace(long number) {
-		// TODO: write your code here
-		String n = number + "";
+		String n = Long.toString(number);
 		int len = getSize(number);
 		
 		int sum = 0;
@@ -83,23 +74,19 @@ public class LAB3_P1 {
 
 	/** Return true if the digit d is a prefix for number */
 	public static boolean prefixMatched(long number, int d) {
-		// TODO: write your code here
 		long prefix1 = getPrefix(number, 1); 
 		long prefix2 = getPrefix(number, 2);
 		
-		if((int)prefix1 == d || (int)prefix2 == d) {
+		if(prefix1 == d || prefix2 == d) {
+			// System.out.println("Prefix is matched to d: " + d);
 			return true;
 		} 
-		else {
-			System.out.println("Prefix is not match");
-			return false;
-		}
+		return false;
 	}
 
 	/** Return the number of digits in d */
 	public static int getSize(long d) {
-		// TODO: write your code here
-		String n = d + "";
+		String n = Long.toString(d);
 		return n.length();
 	}
 
@@ -108,16 +95,13 @@ public class LAB3_P1 {
 	 * in number is less than k, return number.
 	 */
 	public static long getPrefix(long number, int k) {
-		// TODO: write your code here
-		String n = number + "";
+		String n = Long.toString(number);
 		int len = getSize(number);
 		if(len > k) {
 			String prefix = n.substring(0, k);
 			int p = Integer.parseInt(prefix);
 			return p;
 		}
-		else {
-			return number;
-		}
+		return number;
 	}
 }
